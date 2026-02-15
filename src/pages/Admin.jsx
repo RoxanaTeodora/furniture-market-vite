@@ -14,7 +14,7 @@ const Admin = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       const response = await fetch(
-        "https://652bdb8ed0d1df5273eecf98.mockapi.io/3dproducts"
+        "https://652bdb8ed0d1df5273eecf98.mockapi.io/3dproducts",
       );
       const products = await response.json();
       setProducts(products);
@@ -51,53 +51,69 @@ const Admin = () => {
   };
 
   return (
-    <div className="p-10">
-      <div className="flex flex-col gap-4 place-content-center mx-auto mt-10">
-        <div className="flex gap-8 place-content-center items-center">
-          <label htmlFor="name">Name</label>
+    <div className="flex mt-10">
+      <div className="w-[500px] flex flex-col gap-6 ">
+        <div className="w-[500px] flex flex-col gap-2">
+          <label htmlFor="name" className="text-left font-medium text-gray-900">
+            Name
+          </label>
+
           <input
-            className="form-control w-[500px] p-2 text-gray-900 border border-gray-300 bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-            type="text"
             id="name"
+            type="text"
+            placeholder="Product name"
             value={product.name}
-            onChange={(e) => {
-              const productName = e.target.value;
-              setProduct({ ...product, name: productName });
-            }}
+            onChange={(e) => setProduct({ ...product, name: e.target.value })}
+            className="w-xl rounded-md bg-gray-300 px-3 py-2 text-gray-900 outline outline-1 outline-gray-300 focus:outline-2 focus:outline-orange-600"
           />
         </div>
-        <div className="flex gap-8 place-content-center items-center lg:mr-20 sm:ml-10">
-          <label htmlFor="imageURL">Image URL</label>
+
+        <div className="w-[500px] flex flex-col gap-2">
+          <label
+            htmlFor="imageURL"
+            className="text-left font-medium text-gray-900"
+          >
+            Image URL
+          </label>
           <input
             type="text"
             id="imageURL"
-            className="form-control w-[500px] p-2 text-gray-900 border border-gray-300 bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
             value={product.imageURL}
             onChange={(e) => {
               const imageURL = e.target.value;
               setProduct({ ...product, imageURL: imageURL });
             }}
+            className="block w-full min-w-0 rounded-md bg-gray-300 px-1 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-orange-600 sm:text-sm/6"
           />
         </div>
-        <div className="flex gap-8 place-content-center items-center">
-          <label htmlFor="price">Price</label>
+        <div className="w-[500px] flex flex-col gap-2">
+          <label
+            htmlFor="price"
+            className="text-left font-medium text-gray-900"
+          >
+            Price
+          </label>
           <input
             type="text"
             id="price"
-            className="form-control w-[500px] p-2 text-gray-900 border border-gray-300 bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-            value={product.price}
+            className="w-xl rounded-md bg-gray-300 px-3 py-2 text-gray-900 outline outline-1 outline-gray-300 focus:outline-2 focus:outline-orange-600"
             onChange={(e) => {
               const productPrice = e.target.value;
               setProduct({ ...product, price: productPrice });
             }}
           />
         </div>
-        <div className="flex gap-8 place-content-center items-center sm: mr-10">
-          <label htmlFor="description">Description</label>
+        <div className="w-[500px] flex flex-col gap-2">
+          <label
+            htmlFor="description"
+            className="text-left font-medium text-gray-900"
+          >
+            Description
+          </label>
           <input
             type="text"
             id="description"
-            className="form-control w-[500px] p-2 text-gray-900 border border-gray-300 bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            className="w-xl rounded-md bg-gray-300 px-3 py-2 text-gray-900 outline outline-1 outline-gray-300 focus:outline-2 focus:outline-orange-600"
             value={product.description}
             onChange={(e) => {
               const productDescription = e.target.value;
@@ -114,7 +130,7 @@ const Admin = () => {
           </button>
         </div>
       </div>
-      <div className="flex justify-center mx-auto overflow-hidden shadow-lg max-w-screen-xx mt-10">
+      <div className="flex justify-center mx-auto overflow-hidden shadow-lg max-w-screen-xxl mt-10">
         {products && (
           <table className="w-full">
             <thead>
@@ -147,7 +163,7 @@ const Admin = () => {
                           const productId = e.target.id;
                           setCurrentProductId(productId);
                           const productToBeEdited = products.find(
-                            (product) => product.id === productId
+                            (product) => product.id === productId,
                           );
                           setProduct(productToBeEdited);
                         }}
@@ -185,7 +201,7 @@ const Admin = () => {
                             const productId = e.target.id;
                             setCurrentProductId(productId);
                             const productToBeEdited = products.find(
-                              (product) => product.id === productId
+                              (product) => product.id === productId,
                             );
                             setProduct(productToBeEdited);
                           }}
