@@ -11,9 +11,11 @@
   },
   "dependencies": {
     "@emailjs/browser": "^3.11.0",
+    "classnames": "^2.5.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.21.0",
+    "tailwind-hamburgers": "^1.4.0",
     "typeface-roboto": "^1.1.13"
   },
   "devDependencies": {
