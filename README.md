@@ -1,5 +1,6 @@
 ## React + Vite
 - Next Update: navbar responsive for App.jsx
+- Next Update: Admin page responsive 
 - flash demo/ zom-in &out assets for banners or hero section
   
 ### The site uses local storage for the Cart and Admin functionalities. For every modification in the Admin page is mandatory to Delete browsing history and cookies.
