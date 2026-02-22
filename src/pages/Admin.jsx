@@ -51,7 +51,7 @@ const Admin = () => {
   };
 
   return (
-    <div className="flex mt-10">
+    <div className="mt-10 flex flex-col items-center justify-center">
       <div className="w-[500px] flex flex-col gap-6 ">
         <div className="w-[500px] flex flex-col gap-2">
           <label htmlFor="name" className="text-left font-medium text-gray-900">
@@ -78,12 +78,13 @@ const Admin = () => {
           <input
             type="text"
             id="imageURL"
+            placeholder="https://www.ImageURL.com"
             value={product.imageURL}
             onChange={(e) => {
               const imageURL = e.target.value;
               setProduct({ ...product, imageURL: imageURL });
             }}
-            className="block w-full min-w-0 rounded-md bg-gray-300 px-1 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-orange-600 sm:text-sm/6"
+            className="block w-full min-w-0 rounded-md bg-gray-300 px-3 py-2  text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-orange-600 "
           />
         </div>
         <div className="w-[500px] flex flex-col gap-2">
@@ -96,6 +97,7 @@ const Admin = () => {
           <input
             type="text"
             id="price"
+            placeholder="600 RON"
             className="w-xl rounded-md bg-gray-300 px-3 py-2 text-gray-900 outline outline-1 outline-gray-300 focus:outline-2 focus:outline-orange-600"
             onChange={(e) => {
               const productPrice = e.target.value;
@@ -113,6 +115,7 @@ const Admin = () => {
           <input
             type="text"
             id="description"
+            placeholder="Product description"
             className="w-xl rounded-md bg-gray-300 px-3 py-2 text-gray-900 outline outline-1 outline-gray-300 focus:outline-2 focus:outline-orange-600"
             value={product.description}
             onChange={(e) => {
@@ -124,13 +127,13 @@ const Admin = () => {
         <div className="flex justify-center items-center mt-6">
           <button
             onClick={addNewProduct}
-            className="bg-green-800 px-7 py-2.5 text-sm font-medium text-white hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-green-300"
+            className="bg-green-800 rounded-md px-7 py-2.5 text-sm font-medium text-white hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-green-300"
           >
             Add new product
           </button>
         </div>
       </div>
-      <div className="flex justify-center mx-auto overflow-hidden shadow-lg max-w-screen-xxl mt-10">
+      <div className="w-fulljustify-center mx-auto overflow-hidden shadow-lg max-w-screen-xxl mt-10">
         {products && (
           <table className="w-full">
             <thead>
@@ -146,17 +149,17 @@ const Admin = () => {
               {products.map((product) => (
                 <React.Fragment key={product.id}>
                   <tr className="border-b hidden sm:table-row">
-                    <td className="p-2">{product.name}</td>
-                    <td className="p-2 flex justify-center lg:mt-14">
+                    <td className="p-10">{product.name}</td>
+                    <td className="p-10 flex justify-center lg:mt-14">
                       <img
                         src={product.imageURL}
                         width={100}
                         alt={product.name}
                       />
                     </td>
-                    <td className="px-2">{product.price}</td>
-                    <td className="px-2">{product.description}</td>
-                    <td className="px-2 flex flex-col items-center gap-2 mb-8">
+                    <td className="px-10">{product.price}</td>
+                    <td className="px-10">{product.description}</td>
+                    <td className="px-10 flex flex-col items-center gap-2 mb-8">
                       <button
                         id={product.id}
                         onClick={(e) => {
