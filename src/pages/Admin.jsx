@@ -8,13 +8,13 @@ const Admin = () => {
     imageURL: "",
   });
   //currentProductId, setCurrentProductId state pentru delete button
-  const [currentProductId, setCurrentProductId] = useState("");
+  const [setCurrentProductId] = useState("");
   const [products, setProducts] = useState(null);
 
   useEffect(() => {
     const fetchProducts = async () => {
       const response = await fetch(
-        "https://652bdb8ed0d1df5273eecf98.mockapi.io/3dproducts"
+        "https://652bdb8ed0d1df5273eecf98.mockapi.io/3dproducts",
       );
       const products = await response.json();
       setProducts(products);
@@ -51,53 +51,72 @@ const Admin = () => {
   };
 
   return (
-    <div className="p-10">
-      <div className="flex flex-col gap-4 place-content-center mx-auto mt-10">
-        <div className="flex gap-8 place-content-center items-center">
-          <label htmlFor="name">Name</label>
+    <div className="mt-10 flex flex-col items-center justify-center">
+      <div className="w-full px-3 sm:px-6 md:px-0 md:w-1/2 xl:w-1/4 mx-auto flex flex-col gap-6">
+        <div className=" flex flex-col gap-2">
+          <label htmlFor="name" className="text-left font-medium text-gray-900">
+            Name
+          </label>
+
           <input
-            className="form-control w-[500px] p-2 text-gray-900 border border-gray-300 bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-            type="text"
             id="name"
+            type="text"
+            placeholder="Product name"
             value={product.name}
-            onChange={(e) => {
-              const productName = e.target.value;
-              setProduct({ ...product, name: productName });
-            }}
+            onChange={(e) => setProduct({ ...product, name: e.target.value })}
+            className="w-xl rounded-md bg-gray-300 px-3 py-2 text-gray-900 outline outline-1 outline-gray-300 focus:outline-2 focus:outline-orange-600"
           />
         </div>
-        <div className="flex gap-8 place-content-center items-center lg:mr-20 sm:ml-10">
-          <label htmlFor="imageURL">Image URL</label>
+
+        <div className="w-auto flex flex-col gap-2">
+          <label
+            htmlFor="imageURL"
+            className="text-left font-medium text-gray-900"
+          >
+            Image URL
+          </label>
           <input
             type="text"
             id="imageURL"
-            className="form-control w-[500px] p-2 text-gray-900 border border-gray-300 bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            placeholder="https://www.ImageURL.com"
             value={product.imageURL}
             onChange={(e) => {
               const imageURL = e.target.value;
               setProduct({ ...product, imageURL: imageURL });
             }}
+            className="block w-full min-w-0 rounded-md bg-gray-300 px-3 py-2  text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-orange-600 "
           />
         </div>
-        <div className="flex gap-8 place-content-center items-center">
-          <label htmlFor="price">Price</label>
+        <div className=" flex flex-col gap-2">
+          <label
+            htmlFor="price"
+            className="text-left font-medium text-gray-900"
+          >
+            Price
+          </label>
           <input
             type="text"
             id="price"
-            className="form-control w-[500px] p-2 text-gray-900 border border-gray-300 bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-            value={product.price}
+            placeholder="600 RON"
+            className="w-xl rounded-md bg-gray-300 px-3 py-2 text-gray-900 outline outline-1 outline-gray-300 focus:outline-2 focus:outline-orange-600"
             onChange={(e) => {
               const productPrice = e.target.value;
               setProduct({ ...product, price: productPrice });
             }}
           />
         </div>
-        <div className="flex gap-8 place-content-center items-center sm: mr-10">
-          <label htmlFor="description">Description</label>
+        <div className=" flex flex-col gap-2">
+          <label
+            htmlFor="description"
+            className="text-left font-medium text-gray-900"
+          >
+            Description
+          </label>
           <input
             type="text"
             id="description"
-            className="form-control w-[500px] p-2 text-gray-900 border border-gray-300 bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            placeholder="Product description"
+            className="w-xl rounded-md bg-gray-300 px-3 py-2 text-gray-900 outline outline-1 outline-gray-300 focus:outline-2 focus:outline-orange-600"
             value={product.description}
             onChange={(e) => {
               const productDescription = e.target.value;
@@ -108,21 +127,21 @@ const Admin = () => {
         <div className="flex justify-center items-center mt-6">
           <button
             onClick={addNewProduct}
-            className="bg-green-800 px-7 py-2.5 text-sm font-medium text-white hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-green-300"
+            className="bg-[#213425] px-7 py-2.5 text-sm font-medium text-white hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-green-300"
           >
             Add new product
           </button>
         </div>
       </div>
-      <div className="flex justify-center mx-auto overflow-hidden shadow-lg max-w-screen-xx mt-10">
+      <div className="w-fulljustify-center mx-auto overflow-hidden shadow-lg max-w-screen-xxl mt-10">
         {products && (
           <table className="w-full">
             <thead>
-              <tr className="hidden sm:table-row">
+              <tr className="hidden sm:table-row w-full">
                 <th>Name</th>
                 <th>Image URL</th>
                 <th>Price</th>
-                <th className="w-[600px] pl-[10px]">Description</th>
+                <th className="pl-[10px]">Description</th>
                 <th>Edit/Delete</th>
               </tr>
             </thead>
@@ -130,24 +149,24 @@ const Admin = () => {
               {products.map((product) => (
                 <React.Fragment key={product.id}>
                   <tr className="border-b hidden sm:table-row">
-                    <td className="p-2">{product.name}</td>
-                    <td className="p-2 flex justify-center lg:mt-14">
+                    <td className="p-10">{product.name}</td>
+                    <td className="p-10 flex justify-center lg:mt-14">
                       <img
                         src={product.imageURL}
                         width={100}
                         alt={product.name}
                       />
                     </td>
-                    <td className="px-2">{product.price}</td>
-                    <td className="px-2">{product.description}</td>
-                    <td className="px-2 flex flex-col items-center gap-2 mb-8">
+                    <td className="px-10">{product.price}</td>
+                    <td className="px-10">{product.description}</td>
+                    <td className="px-10 flex flex-col items-center gap-2 mb-8">
                       <button
                         id={product.id}
                         onClick={(e) => {
                           const productId = e.target.id;
                           setCurrentProductId(productId);
                           const productToBeEdited = products.find(
-                            (product) => product.id === productId
+                            (product) => product.id === productId,
                           );
                           setProduct(productToBeEdited);
                         }}
@@ -185,7 +204,7 @@ const Admin = () => {
                             const productId = e.target.id;
                             setCurrentProductId(productId);
                             const productToBeEdited = products.find(
-                              (product) => product.id === productId
+                              (product) => product.id === productId,
                             );
                             setProduct(productToBeEdited);
                           }}

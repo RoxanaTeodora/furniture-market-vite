@@ -1,5 +1,5 @@
 // Home.js > Products
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import ProductCard from "../components/Products/ProductCard";
 import { useNavigate } from "react-router-dom";
 
@@ -10,7 +10,7 @@ const Home = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       const response = await fetch(
-        "https://652bdb8ed0d1df5273eecf98.mockapi.io/3dproducts"
+        "https://652bdb8ed0d1df5273eecf98.mockapi.io/3dproducts",
       );
       const products = await response.json();
       setProducts(products);

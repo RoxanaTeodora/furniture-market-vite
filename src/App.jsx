@@ -3,7 +3,7 @@ import "./App.css";
 import Footer from "./components/Footer/Footer";
 import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar/Nav";
-import React, { lazy, Suspense } from "react";
+import { lazy, Suspense } from "react";
 
 const Home = lazy(() => import("./pages/Home"));
 const Cart = lazy(() => import("./pages/Cart"));
