@@ -1,15 +1,14 @@
-import React from "react";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
     <>
       <footer className="relative mt-14 bg-[#213425] px-4 pt-20">
-        <div className="absolute -top-10 left-1/2 h-16 w-16 -translate-x-1/2 rounded-lg border-4 border-[#213425] bg-white ">
+        <div className="absolute -top-10 left-1/2 h-18 w-16 -translate-x-1/2 rounded-lg border-4 border-[#213425] bg-white hover:scale-110 transition-transform duration-300">
           <img
             height={8000}
             width={8000}
-            className="h-full w-full object-contain"
+            className="h-full w-full object-contain "
             src="./logo4.png"
             alt="logo"
           />
