@@ -8,7 +8,7 @@ const Admin = () => {
     imageURL: "",
   });
   //currentProductId, setCurrentProductId state pentru delete button
-  const [currentProductId, setCurrentProductId] = useState("");
+  const [setCurrentProductId] = useState("");
   const [products, setProducts] = useState(null);
 
   useEffect(() => {
@@ -52,8 +52,8 @@ const Admin = () => {
 
   return (
     <div className="mt-10 flex flex-col items-center justify-center">
-      <div className="w-[500px] flex flex-col gap-6 ">
-        <div className="w-[500px] flex flex-col gap-2">
+      <div className="w-full px-3 sm:px-6 md:px-0 md:w-1/2 xl:w-1/4 mx-auto flex flex-col gap-6">
+        <div className=" flex flex-col gap-2">
           <label htmlFor="name" className="text-left font-medium text-gray-900">
             Name
           </label>
@@ -68,7 +68,7 @@ const Admin = () => {
           />
         </div>
 
-        <div className="w-[500px] flex flex-col gap-2">
+        <div className="w-auto flex flex-col gap-2">
           <label
             htmlFor="imageURL"
             className="text-left font-medium text-gray-900"
@@ -87,7 +87,7 @@ const Admin = () => {
             className="block w-full min-w-0 rounded-md bg-gray-300 px-3 py-2  text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-orange-600 "
           />
         </div>
-        <div className="w-[500px] flex flex-col gap-2">
+        <div className=" flex flex-col gap-2">
           <label
             htmlFor="price"
             className="text-left font-medium text-gray-900"
@@ -105,7 +105,7 @@ const Admin = () => {
             }}
           />
         </div>
-        <div className="w-[500px] flex flex-col gap-2">
+        <div className=" flex flex-col gap-2">
           <label
             htmlFor="description"
             className="text-left font-medium text-gray-900"
@@ -127,7 +127,7 @@ const Admin = () => {
         <div className="flex justify-center items-center mt-6">
           <button
             onClick={addNewProduct}
-            className="bg-green-800 rounded-md px-7 py-2.5 text-sm font-medium text-white hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-green-300"
+            className="bg-[#213425] px-7 py-2.5 text-sm font-medium text-white hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-green-300"
           >
             Add new product
           </button>
@@ -137,11 +137,11 @@ const Admin = () => {
         {products && (
           <table className="w-full">
             <thead>
-              <tr className="hidden sm:table-row">
+              <tr className="hidden sm:table-row w-full">
                 <th>Name</th>
                 <th>Image URL</th>
                 <th>Price</th>
-                <th className="w-[600px] pl-[10px]">Description</th>
+                <th className="pl-[10px]">Description</th>
                 <th>Edit/Delete</th>
               </tr>
             </thead>
