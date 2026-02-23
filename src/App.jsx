@@ -15,7 +15,7 @@ const Contact = lazy(() => import("./pages/Contact"));
 const App = () => {
   return (
     <>
-      <Navbar color="white" />
+      <Navbar className="flex justify-between items-center text-white py-6 px-8 md:px-32 " />
       <Suspense fallback={<h1>Loading...</h1>}>
         <Routes>
           <Route path="/" element={<Home />} />
