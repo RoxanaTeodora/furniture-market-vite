@@ -1,6 +1,5 @@
 // Home.js
-import React, { useState } from "react";
-import { Routes, Route, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import scenaImage from "../assets/scena.png";
 import dulapuri from "../assets/dulapuri.png";
 import Carousel from "../components/Carousel/Carousel";
@@ -16,23 +15,23 @@ function About() {
   return (
     <>
       <div className="  overflow-hidden shadow-lg m-10">
-        <div className=" w-full flex flex-col overflow-hidden  sm:flex-row md:h-200">
+        <div className=" w-full flex flex-col overflow-hidden  sm:flex-row md:h-200 ">
           <div className="order-first ml-auto h-48 w-full sm:order-none sm:h-auto sm:w-1/2 lg:w-2/5">
             <img
-              className="h-full w-full object-cover bg-[#D6E0C6]"
+              className="h-full w-full object-cover hover:scale-110 transition-transform duration-300"
               src={scenaImage}
               alt="Scena"
             />
           </div>
           <div className="flex w-full flex-col sm:w-1/2 sm:p-8 lg:w-3/5">
-            <h2 className="text-xl font-bold  md:text-2xl lg:text-4xl mt-4 ml-4">
+            <h2 className="text-xl font-bold  md:text-2xl lg:text-4xl mt-4 ">
               3D Concept Models for sustainable furniture
             </h2>
-            <p className="mt-12 text-lg  p-30 text-justify mr-10 w-ful">
+            <p className="mt-6 m-4 text-lg p-30 items-center text-justify w-ful">
               The environmental study on 3D models of furniture using
               sustainable solutions for manufacturing.The purpose of the
               eco-design is to reduce the negative impact on the environment by
-              using the useful, sustainable and aesthetically pleasing product.
+              using the useful, sustainable and pleasing product.
             </p>
             <div className="flex items-center justify-center">
               <button className="m-4 mt-14 mb-4 flex w-44 cursor-pointer items-center justify-center  bg-green-950 px-5 py-2.5 text-sm font-medium text-white hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-green-300">
@@ -66,7 +65,7 @@ function About() {
 
         <div className="m-10 flex flex-col md:flex-row items-center justify-center h-auto md:h-[300px] bg-[#D6E0C6] mb-10 p-4 md:p-0">
           <div className="flex flex-col md:flex-row md:divide-x md:divide-gray-200 md:space-x-4">
-            <div className="flex flex-col items-center max-w-xs p-4 text-green-950">
+            <div className="flex flex-col items-center  justify-center max-w-xs p-4 text-green-950">
               <p className="text-gray-600 font-bold">
                 Sustainability
                 <span className="block mt-2 font-normal items-center">
@@ -75,7 +74,7 @@ function About() {
                 </span>
               </p>
             </div>
-            <div className="flex flex-col items-center max-w-xs p-4 text-green-950">
+            <div className="flex flex-col items-center justify-center max-w-xs p-4 text-green-950">
               <p className="text-gray-600 font-bold">
                 Innovation
                 <span className="block mt-2 font-normal">
@@ -85,10 +84,10 @@ function About() {
                 </span>
               </p>
             </div>
-            <div className="flex flex-col items-center max-w-xs p-4 text-green-950">
+            <div className="flex flex-col items-center justify-center max-w-xs p-4 text-green-950">
               <p className="text-gray-600 font-bold">
                 Aesthetics
-                <span className="block mt-2 font-normal">
+                <span className="block mt-2 font-normal items-center justify-center">
                   Experience the perfect blend of form and function with our
                   aesthetics-focused furniture
                 </span>
@@ -105,9 +104,9 @@ function About() {
             </h2>
             <p className="mt-12 text-lg p-30 text-justify">
               The environmental study on 3D models of furniture using
-              sustainable solutions for manufacturing. The purpose of the
-              eco-design is to reduce the negative impact on the environment by
-              using the useful, sustainable and aesthetically pleasing product.
+              sustainable solutions for manufacturing. The purpose of the design
+              is to reduce the negative impact on the environment by using the
+              useful, sustainable and aesthetically pleasing product.
             </p>
             <div className="flex items-center justify-center">
               <Link to="/contact">
@@ -119,7 +118,7 @@ function About() {
           </div>
           <div className="w-full sm:w-1/2 lg:w-2/5 order-first md:order-last">
             <img
-              className="w-full h-[300px] md:h-[500px] object-cover m-4"
+              className="w-full h-[300px] md:h-[500px] object-cover m-4 hover:scale-110 transition-transform duration-300"
               src={dulapuri}
               alt="img"
             />
