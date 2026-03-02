@@ -36,5 +36,5 @@ The website was created using tailwindcss components.
 https://github.com/RoxanaTeodora/Sustainable_furniture_market/assets/142969879/4baf8d6e-5a06-46eb-8a57-32c117a9db50
 
 - Deploy
-  Vercel repository: https://furniture-market-vite-git-main-roxanateodoras-projects.vercel.app/about
+  Vercel repository: [https://furniture-market-vite-git-main-roxanateodoras-projects.vercel.app/about](https://furniture-market-vite.vercel.app)
   
