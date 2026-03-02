@@ -1,5 +1,5 @@
 ## React + Vite
-- Next Update: vercel repository
+
   
 ### The site uses local storage for the Cart and Admin functionalities. For every modification in the Admin page is mandatory to Delete browsing history and cookies.
 
@@ -36,5 +36,5 @@ The website was created using tailwindcss components.
 https://github.com/RoxanaTeodora/Sustainable_furniture_market/assets/142969879/4baf8d6e-5a06-46eb-8a57-32c117a9db50
 
 - Deploy
-  npm run buil
-  deploy dist file
+  Vercel repository: https://furniture-market-vite.vercel.app/about: https://furniture-market-vite.vercel.app/about
+  
