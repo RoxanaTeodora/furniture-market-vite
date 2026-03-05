@@ -1,5 +1,6 @@
 ## React + Vite
 
+next: update naxbar design inline with form page 
   
 ### The site uses local storage for the Cart and Admin functionalities. For every modification in the Admin page is mandatory to Delete browsing history and cookies.
 
