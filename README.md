@@ -1,6 +1,7 @@
 ## React + Vite
 
-next: update naxbar design inline with Contact page 
+next: update navbar design inline with Contact page, using the design for underline
+next: send to back the product cards to be under the mobile navbar
   
 ### The site uses local storage for the Cart and Admin functionalities. For every modification in the Admin page is mandatory to Delete browsing history and cookies.
 
