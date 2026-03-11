@@ -1,7 +1,9 @@
 ## React + Vite
 
 next: update navbar design inline with Contact page, using the design for underline
-next: send to back the product cards to be under the mobile navbar
+next: send to back the product cards to be under the mobile navbar:
+<div class="absolute top-full left-0 w-full bg-[#213425] flex flex-col items-center gap-6 font-semibold text-lg py-6 transform transition-all duration-300 xl:hidden opacity-100 translate-y-0"><a href="/about">About</a><a href="/">Products</a><a href="/cart">Cart</a><a href="/contact">Contact</a><a href="/admin">Admin</a></div>
+<div class="relativem-10 flex flex-col overflow-hidden border border-gray-100 bg-white shadow-md -z-10"><img src="https://www.ikea.com/ro/ro/images/products/vindkast-lampadar-alb__1180020_pe896176_s5.jpg?f=xl" alt="Intelligent LAMP"><div class="mt-4 pb-5"><h5 class="text-xl tracking-tight text-slate-900">Intelligent LAMP</h5><div class="mt-2 mb-5 flex justify-center items-center"><p><span class="text-3xl font-bold text-slate-900">834.00 RON</span></p></div><div class="flex flex-row font-medium text-black items-buttom justify-center items-center"><button id="40" class="ml-8 flex flex-row bg-green-950 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-green-300">Add to cart</button><span><button><img class="h-[30px] flex bottom-0  pl-6   w-full object-cover" src="/assets/info-CG8pakz9.png" alt="img"></button></span></div></div></div>
   
 ### The site uses local storage for the Cart and Admin functionalities. For every modification in the Admin page is mandatory to Delete browsing history and cookies.
 
