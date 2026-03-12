@@ -1,8 +1,7 @@
 ## React + Vite
 
 next: update navbar design inline with Contact page, using the design for underline
-next: send to back the product cards to be under the mobile navbar:
-adaugare: relative la top-full left-0 w-full bg-[#213425] flex flex-col items-center gap-6 font-semibold text-lg py-6 transform transition-all duration-300 xl:hidden opacity-100 translate-y-0" cu hidden la <img src="./Menu.svg" alt="menu" class="w-10 h-10"> si <img class="h-14 w-14 rounded-lg bg-white hover:scale-110 transition-transform duration-300" src="./logo4.png" alt="logo">
+
   
 ### The site uses local storage for the Cart and Admin functionalities. For every modification in the Admin page is mandatory to Delete browsing history and cookies.
 
